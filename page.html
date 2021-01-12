@@ -13,21 +13,9 @@
     </head>
 
     <body>
-        <button id="but" onclick="send_message()">Click ME</button>
+        <button id="but">Click ME</button>
     
     <script>
-        var request = new XMLHttpRequest();
-        token = 'your telegram bot token here'
-        api = `https://api.telegram.org/bot${token}/`        
-
-        function send_message() {
-            method = 'sendMessage?'
-            chat_id = '746354179'
-            text = 'Кнопка нажата'
-            params = `chat_id=${chat_id}&text=${text}`
-            request.open("POST", api+method+params, true);
-            request.send();
-        }
 
     </script>
     </body>
