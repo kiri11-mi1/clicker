@@ -1,5 +1,6 @@
 import os
 
+
 class Config:
     scrn_filename = 'screen.jpg'
     button_image_path = os.path.join('img', 'button_2.png')
