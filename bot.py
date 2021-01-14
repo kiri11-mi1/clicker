@@ -6,7 +6,6 @@ class Bot:
         self.token = token
         self.api = f'https://api.telegram.org/bot{token}/'
 
-
     def send_message(self, chat_id, text):
         '''Отправка сообщения'''
         params = {
@@ -16,7 +15,6 @@ class Bot:
         method = 'sendMessage'
         response = requests.post(self.api + method, params).json()
         return response
-
 
     def send_photo(self, chat_id, file, text):
         '''Отправка скриншота'''
@@ -28,6 +26,9 @@ class Bot:
             'photo': open(file, 'rb'),
         }
         method = 'sendPhoto'
-        response = requests.post(self.api + method, data=data, files=files).json()
+        response = requests.post(
+                        self.api + method,
+                        data=data,
+                        files=files
+        ).json()
         return response
-
