@@ -7,9 +7,10 @@ import os
 import json
 
 
-logging.basicConfig(format='%(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S',
-                    level=logging.INFO,
-                    filename="sample.log")
+logging.basicConfig(
+            format='%(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S',
+            level=logging.INFO,
+            filename="sample.log")
 
 
 def make_json(content, filename='response.json'):
@@ -36,7 +37,7 @@ def main():
             bot.send_photo(cfg.CHAT_ID, cfg.scrn_filename, 'Нашёл цель!')
 
             os.remove(cfg.scrn_filename)
-            
+
             pyautogui.moveTo(mouse_coord[0], mouse_coord[1])
             time.sleep(3)
 
