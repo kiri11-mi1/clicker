@@ -23,9 +23,13 @@ def main():
     cfg = Config()
     bot = Bot(cfg.TOKEN)
 
+    # Устанавливаем курсор в левый верхний угол через 5 секунд после запуска скрипта
+    time.sleep(5)
+    pyautogui.moveTo(1, 1)
+
     while True:
         coord = pyautogui.locateOnScreen(cfg.button_image_path)
-        if coord is not None:
+        if coord:
             mouse_coord = pyautogui.position()
 
             center = pyautogui.center(coord)
@@ -33,7 +37,6 @@ def main():
             logging.info('Нашёл цель!')
             pyautogui.screenshot(cfg.scrn_filename)
 
-            # bot.send_message(cfg.CHAT_ID, 'Нашёл цель!')
             bot.send_photo(cfg.CHAT_ID, cfg.scrn_filename, 'Нашёл цель!')
 
             os.remove(cfg.scrn_filename)
