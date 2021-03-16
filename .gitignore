@@ -1,6 +1,6 @@
-.venv/
 __pycache__/
 *.json
 *.jpg
 *.log
 .vscode/
+*.env
